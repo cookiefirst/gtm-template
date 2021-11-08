@@ -1,5 +1,5 @@
 homepage: "https://cookiefirst.com"
-documentation: "https://support.cookiefirst.com"
+documentation: "https://support.cookiefirst.com/hc/en-us/articles/4410412855441-Google-Tag-Manager-and-Google-Consent-Mode-beta-"
 versions:
   - sha: 7abac915045a7e592e7291855e8c2de9e4e33ee0
     changeNotes: Initial release of the GTM template file.
