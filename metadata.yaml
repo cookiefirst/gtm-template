@@ -1,0 +1,5 @@
+homepage: "https://cookiefirst.com"
+documentation: "https://support.cookiefirst.com"
+versions:
+  - sha:7abac915045a7e592e7291855e8c2de9e4e33ee0
+    changeNotes: Initial release of the GTM template file
