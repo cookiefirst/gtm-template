@@ -1,5 +1,12 @@
 homepage: "https://cookiefirst.com"
 documentation: "https://support.cookiefirst.com/hc/en-us/articles/4410412855441-Google-Tag-Manager-and-Google-Consent-Mode-beta-"
 versions:
+  # v1.0
+  - sha:
+    changeNotes: |2
+      Now handles Consent Mode Updates by reading out the cookie values. Better performance
+      Allows for default Consent Mode settings per region based on https://en.wikipedia.org/wiki/ISO_3166-2#current-codes
+      Important - consent mode only works with category based consent enabled
+  # v0.1
   - sha: 7abac915045a7e592e7291855e8c2de9e4e33ee0
     changeNotes: Initial release of the GTM template file.
