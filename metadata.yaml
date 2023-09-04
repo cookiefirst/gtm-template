@@ -4,7 +4,7 @@ versions:
   # v1.0
   - sha:
     changeNotes: |2
-      Now handles Consent Mode Updates by reading out the cookie values. Better performance
+      Now handles Consent Mode Updates by reading out the local storage values. Better performance
       Allows for default Consent Mode settings per region based on https://en.wikipedia.org/wiki/ISO_3166-2#current-codes
       Important - consent mode only works with category based consent enabled
   # v0.1
