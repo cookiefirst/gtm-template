@@ -36,13 +36,7 @@ ___TEMPLATE_PARAMETERS___
     "name": "apiKey",
     "displayName": "API key",
     "simpleValueType": true,
-    "help": "Fill your api key in, you can find it in the CookieFirst panel.",
-    "valueValidators": [
-      {
-        "type": "NON_EMPTY",
-        "errorMessage": "You need to enter a API key"
-      }
-    ]
+    "help": "Fill your api key in, you can find it in the CookieFirst panel."
   },
   {
     "type": "CHECKBOX",
@@ -159,7 +153,7 @@ ___TEMPLATE_PARAMETERS___
         "editRowTitle": "Edit region",
         "newRowButtonText": "New region",
         "newRowTitle": "",
-        "help": "Set the default consent mode settings. You can add different rules for different regions."
+        "help": "Set the default consent mode settings. You can add different rules for different regions. Leave the Region empty to apply to all regions"
       }
     ],
     "help": "Set the default configuration for the Consent Mode types"
@@ -187,8 +181,7 @@ const LOCALSTORAGE_ITEM_NAME = 'cookiefirst-consent';
 const apiKey = data.apiKey;
 if (!apiKey) {
     logToConsole('No API key provided.');
-    data.gtmOnFailure();
-    return;
+   
 }
 
 const urlPassThrough = !!data.urlPassThrough;
@@ -298,11 +291,16 @@ const main = () => {
 
   // If the URL input by the user matches the permissions set for the template,
 // inject the script with the onSuccess and onFailure methods as callbacks.
+ 
+if (!apiKey) {
+    logToConsole('No API key provided, so do not load the consent.js file');
+   
+} else {  
 if (queryPermission('inject_script', url)) {
   injectScript(url, onSuccess, onFailure);
 } else {
   logToConsole('Template: Script load failed due to permissions mismatch.');
-  data.gtmOnFailure();
+}
 }
   /**
    * Add event listener to trigger update when consent changes
