@@ -229,7 +229,7 @@ if (!host) {
     return;
 }
 
-const url = 'https://consent.cookiefirst.com/' + host + '-' + apiKey + '/consent.js';
+const url = 'https://consent.cookiefirst.com/sites/' + host + '-' + apiKey + '/consent.js';
 logToConsole(url);
 
 const onSuccess = () => {
@@ -810,3 +810,5 @@ setup: ''
 ___NOTES___
 
 Created on 08/11/2021, 10:26:40
+
+
