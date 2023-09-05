@@ -10,7 +10,7 @@ ___INFO___
     "PERSONALIZATION",
     "CONVERSIONS"
   ],
-  "displayName": "Cookie First CMP integration (Consent Mode) RAFAL",
+  "displayName": "CookieFirst CMP integration (Consent Mode)",
   "brand": {
     "id": "github.com_cookiefirst",
     "displayName": "cookiefirst",
