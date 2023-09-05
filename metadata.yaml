@@ -2,7 +2,7 @@ homepage: "https://cookiefirst.com"
 documentation: "https://support.cookiefirst.com/hc/en-us/articles/4410412855441-Google-Tag-Manager-and-Google-Consent-Mode-beta-"
 versions:
   # v1.0
-  - sha: 9c0effbdc09907387797577b52cc8a2fb0a2c5a5
+  - sha: 995d1ef29b52f98808423671bd5d9e260a933e33
     changeNotes: |2
       Now handles Consent Mode Updates by reading out the local storage values. Better performance
       Allows for default Consent Mode settings per region based on https://en.wikipedia.org/wiki/ISO_3166-2#current-codes
