@@ -1,6 +1,9 @@
 homepage: "https://cookiefirst.com"
 documentation: "https://support.cookiefirst.com/hc/en-us/articles/4410412855441-Google-Tag-Manager-and-Google-Consent-Mode-beta-"
 versions:
+  # v1.0.1
+  - sha:4b1f5551bbd1fc135aa162c13b3606b0cd091e0b
+    changeNotes: Minor change
   # v1.0
   - sha: a52336c8644835b17ffd1476772738921d1f671e
     changeNotes: |2
