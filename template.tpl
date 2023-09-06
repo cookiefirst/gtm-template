@@ -351,10 +351,6 @@ ___WEB_PERMISSIONS___
               {
                 "type": 1,
                 "string": "https://*.cookiefirst.com/"
-              },
-              {
-                "type": 1,
-                "string": "https://*.cookiefirst.dev/"
               }
             ]
           }
