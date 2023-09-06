@@ -223,7 +223,11 @@ const getConsentRegionData = (regionObject) => {
 let host;
 if (queryPermission('get_url', 'host')) {
     host = getUrl('host');
+    if (host.indexOf('www.') === 0) {
+        host = host.substring(4);
+    }
 }
+
 if (!host) {
     logToConsole('No host URL provided.');
     data.gtmOnFailure();
