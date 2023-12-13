@@ -178,6 +178,7 @@ const queryPermission = require('queryPermission');
 const setDefaultConsentState = require('setDefaultConsentState');
 const updateConsentState = require('updateConsentState');
 const callInWindow = require('callInWindow');
+const access_consent = require('addConsentListener');
 const gtagSet = require('gtagSet');
 const getUrl = require('getUrl');
 const JSON = require('JSON');
@@ -207,6 +208,8 @@ const getRegionArr = (regionStr) => {
 const getConsentRegionData = (regionObject) => {
     const consentRegionData = {
         ad_storage: regionObject.advertisingConsent,
+        ad_user_data: regionObject.advertisingConsent,
+        ad_personalization: regionObject.advertisingConsent,
         analytics_storage: regionObject.performanceConsent,
         functionality_storage: regionObject.functionalConsent,
         personalization_storage: regionObject.functionalConsent,
@@ -248,6 +251,8 @@ const onFailure = () => {
 const processConsentObject = (consentObject) => {
     const consentModeStates = {
         ad_storage: consentObject.advertising ? 'granted' : 'denied',
+        ad_user_data: consentObject.advertising ? 'granted' : 'denied',
+        ad_personalization: consentObject.advertising ? 'granted' : 'denied',
         analytics_storage: consentObject.performance ? 'granted' : 'denied',
         functionality_storage: consentObject.functional ? 'granted' : 'denied',
         personalization_storage: consentObject.functional ? 'granted' : 'denied',
@@ -278,6 +283,8 @@ const main = () => {
     if (!isDefaultStateFilled) {
         const defaultState = {
             ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
             analytics_storage: 'denied',
             functionality_storage: 'denied',
             personalization_storage: 'denied',
@@ -561,6 +568,68 @@ ___WEB_PERMISSIONS___
                   {
                     "type": 1,
                     "string": "wait_for_update"
+                  },
+                  {
+                    "type": 8,
+                    "boolean": true
+                  },
+                  {
+                    "type": 8,
+                    "boolean": true
+                  }
+                ]
+              },
+              {
+                "type": 3,
+                "mapKey": [
+                  {
+                    "type": 1,
+                    "string": "consentType"
+                  },
+                  {
+                    "type": 1,
+                    "string": "read"
+                  },
+                  {
+                    "type": 1,
+                    "string": "write"
+                  }
+                ],
+                "mapValue": [
+                  {
+                    "type": 1,
+                    "string": "ad_user_data"
+                  },
+                  {
+                    "type": 8,
+                    "boolean": true
+                  },
+                  {
+                    "type": 8,
+                    "boolean": true
+                  }
+                ]
+              },
+              {
+                "type": 3,
+                "mapKey": [
+                  {
+                    "type": 1,
+                    "string": "consentType"
+                  },
+                  {
+                    "type": 1,
+                    "string": "read"
+                  },
+                  {
+                    "type": 1,
+                    "string": "write"
+                  }
+                ],
+                "mapValue": [
+                  {
+                    "type": 1,
+                    "string": "ad_personalization"
                   },
                   {
                     "type": 8,
