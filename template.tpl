@@ -18,7 +18,7 @@ ___INFO___
     "PERSONALIZATION",
     "CONVERSIONS"
   ],
-  "displayName": "CookieFirst CMP integration (Consent Mode)",
+  "displayName": "CookieFirst CMP integration (Consent Mode v2)",
   "brand": {
     "id": "github.com_cookiefirst",
     "displayName": "cookiefirst",
@@ -44,14 +44,14 @@ ___TEMPLATE_PARAMETERS___
     "name": "apiKey",
     "displayName": "API key",
     "simpleValueType": true,
-    "help": "Fill your api key in, you can find it in the CookieFirst panel."
+    "help": "Fill your api key in, you can find it the \"Your embed script\" section of your domain settings in CookieFirst."
   },
   {
     "type": "CHECKBOX",
     "name": "urlPassThrough",
     "checkboxText": "Pass Ad Click Information Through URLs",
     "simpleValueType": true,
-    "help": "When a visitor lands on an advertiser’s website after clicking an ad, information about the ad might be appended to the landing page URLs as a query parameter.",
+    "help": "When a visitor lands on an advertiser’s website after clicking an ad, information about the ad might be appended to the landing page URLs as a query parameter. Use with caution and test your website before production.",
     "alwaysInSummary": true
   },
   {
@@ -131,7 +131,7 @@ ___TEMPLATE_PARAMETERS___
             "param": {
               "type": "SELECT",
               "name": "advertisingConsent",
-              "displayName": "Advertising (ad_storage)",
+              "displayName": "Advertising (ad_storage, ad_user_data, ads_personalization)",
               "selectItems": [
                 {
                   "value": "denied",
@@ -161,7 +161,7 @@ ___TEMPLATE_PARAMETERS___
         "editRowTitle": "Edit region",
         "newRowButtonText": "New region",
         "newRowTitle": "",
-        "help": "Set the default consent mode settings. You can add different rules for different regions. Leave the Region empty to apply to all regions"
+        "help": "Set the default consent mode settings. You can add different rules for different regions. Leave the Region empty to apply to all regions except for the specified ones."
       }
     ],
     "help": "Set the default configuration for the Consent Mode types"
@@ -885,3 +885,5 @@ setup: ''
 ___NOTES___
 
 Created on 08/11/2021, 10:26:40
+
+
