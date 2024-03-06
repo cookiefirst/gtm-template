@@ -1,10 +1,10 @@
 homepage: "https://cookiefirst.com"
 documentation: "https://support.cookiefirst.com/hc/en-us/articles/4410412855441-Google-Tag-Manager-and-Google-Consent-Mode-v2"
 versions:
-  # latest version
+  # Latest version
   - sha: 76252b8cf33652dbd3186eacf33f359ff0045091
-  changeNotes: Updated descriptions for consent mode v2. Allow for using comma separated list of regions
-  # previous versions
+    changeNotes: Updated descriptions for consent mode v2. Allow for using comma separated list of regions
+  # Older versions
   - sha: 35cb938a5c2c2f8c7c620fcc0e206c74d82698a1
     changeNotes: Added support for Consent Mode v2. Adding ad_user_data and ad_personalization to the Advertising category of the banner
   - sha: 564498448a6edad57090209d8adab8bb67c10aa5
