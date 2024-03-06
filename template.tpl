@@ -161,7 +161,7 @@ ___TEMPLATE_PARAMETERS___
         "editRowTitle": "Edit region",
         "newRowButtonText": "New region",
         "newRowTitle": "",
-        "help": "Set the default consent mode settings. You can add different rules for different regions. Leave the Region empty to apply to all regions. If you set the region to \"Unspecified\" it applies to all users from regions that you did not specify."
+        "help": "Set the default consent mode settings. You can add different rules for different regions. Leave the Region empty to apply to all regions except for the specified ones."
       }
     ],
     "help": "Set the default configuration for the Consent Mode types"
