@@ -2,7 +2,7 @@ homepage: "https://cookiefirst.com"
 documentation: "https://support.cookiefirst.com/hc/en-us/articles/4410412855441-Google-Tag-Manager-and-Google-Consent-Mode"
 versions:
   # v1.1.1
-  - sha: 5afabe80b3fc6cb56eeaf2f6bad4237ae4e6f6fe
+  - sha: 76252b8cf33652dbd3186eacf33f359ff0045091
   changeNotes: Updated descriptions for consent mode v2. Allow for using comma separated list of regions.
   # v1.1
   - sha: 35cb938a5c2c2f8c7c620fcc0e206c74d82698a1
