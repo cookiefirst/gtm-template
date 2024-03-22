@@ -262,7 +262,7 @@ const processConsentObject = (consentObject) => {
     updateConsentState(consentModeStates);
 };
 
-const main = () => {
+const main = (data) => {
     gtagSet({
         'developer_id.dNjAwYj': true,
         url_passthrough: urlPassThrough,
@@ -299,7 +299,7 @@ const main = () => {
     // Fetch the consent data from local storage
     if (queryPermission('access_local_storage', 'read', LOCALSTORAGE_ITEM_NAME)) {
         const localStorageConsent = localStorage.getItem(LOCALSTORAGE_ITEM_NAME);
-        if (localStorageConsent) {
+        if (typeof localStorageConsent !=='undefined') {
             logToConsole('Local storage values: ', localStorageConsent);
             const consentObject = JSON.parse(localStorageConsent);
             processConsentObject(consentObject);
@@ -327,8 +327,9 @@ if (queryPermission('inject_script', url)) {
   callInWindow('addCFGTMConsentListener', processConsentObject);
 };
 
-main();
+main(data);
 logToConsole(data);
+data.gtmOnSuccess();
 
 
 ___WEB_PERMISSIONS___
@@ -885,5 +886,3 @@ setup: ''
 ___NOTES___
 
 Created on 08/11/2021, 10:26:40
-
-
