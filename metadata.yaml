@@ -1,24 +1,20 @@
 homepage: "https://cookiefirst.com"
-documentation: "https://support.cookiefirst.com/hc/en-us/articles/4410412855441-Google-Tag-Manager-and-Google-Consent-Mode"
+documentation: "https://support.cookiefirst.com/hc/en-us/articles/4410412855441-Google-Tag-Manager-and-Google-Consent-Mode-v2"
 versions:
-  # v1.1.1
+  # Latest version
   - sha: 76252b8cf33652dbd3186eacf33f359ff0045091
-  changeNotes: Updated descriptions for consent mode v2. Allow for using comma separated list of regions.
-  # v1.1
+    changeNotes: Updated descriptions for consent mode v2. Allow for using comma separated list of regions
+  # Older versions
   - sha: 35cb938a5c2c2f8c7c620fcc0e206c74d82698a1
     changeNotes: Added support for Consent Mode v2. Adding ad_user_data and ad_personalization to the Advertising category of the banner
-  # v1.0.2
   - sha: 564498448a6edad57090209d8adab8bb67c10aa5
     changeNotes: Minor fix to remove www. from the config file url
-  # v1.0.1
   - sha: 07b5d7f1c467616b83f34479c0733b06fade5eec
     changeNotes: Minor change added terms of service
-  # v1.0
   - sha: a52336c8644835b17ffd1476772738921d1f671e
     changeNotes: |2
       Now handles Consent Mode Updates by reading out the local storage values. Better performance
       Allows for default Consent Mode settings per region based on https://en.wikipedia.org/wiki/ISO_3166-2#current-codes
       Important - consent mode only works with category based consent enabled
-  # v0.1
   - sha: 7abac915045a7e592e7291855e8c2de9e4e33ee0
     changeNotes: Initial release of the GTM template file.
