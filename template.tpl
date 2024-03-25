@@ -299,7 +299,7 @@ const main = (data) => {
     // Fetch the consent data from local storage
     if (queryPermission('access_local_storage', 'read', LOCALSTORAGE_ITEM_NAME)) {
         const localStorageConsent = localStorage.getItem(LOCALSTORAGE_ITEM_NAME);
-        if (typeof localStorageConsent !=='undefined') {
+        if (localStorageConsent && typeof localStorageConsent !== 'undefined') {
             logToConsole('Local storage values: ', localStorageConsent);
             const consentObject = JSON.parse(localStorageConsent);
             processConsentObject(consentObject);
