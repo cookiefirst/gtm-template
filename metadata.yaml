@@ -2,9 +2,11 @@ homepage: "https://cookiefirst.com"
 documentation: "https://support.cookiefirst.com/hc/en-us/articles/4410412855441-Google-Tag-Manager-and-Google-Consent-Mode-v2"
 versions:
   # Latest version
+  - sha: 61abc1270a90902a93987a199ee33046a4729d2b
+    changeNotes: Fix for users not loading banner over GTM
+  # Older versions
   - sha: d934c81e8507fe6f53ed446dd138f55d325c8cbe
     changeNotes: Fixed check for presence of local storage item
-  # Older versions
   - sha: 10691edcd060427571fd71850bd9e5a8e7ecf997
     changeNotes: Only fire update if local storage item is found containing consent settings
   - sha: 76252b8cf33652dbd3186eacf33f359ff0045091
