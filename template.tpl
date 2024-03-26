@@ -296,17 +296,34 @@ const main = (data) => {
         setDefaultConsentState(defaultState);
     }
 
-    // Fetch the consent data from local storage
-    if (queryPermission('access_local_storage', 'read', LOCALSTORAGE_ITEM_NAME)) {
-        const localStorageConsent = localStorage.getItem(LOCALSTORAGE_ITEM_NAME);
-        if (localStorageConsent && typeof localStorageConsent !== 'undefined') {
-            logToConsole('Local storage values: ', localStorageConsent);
-            const consentObject = JSON.parse(localStorageConsent);
-            processConsentObject(consentObject);
-        }
+  // Check if local storage permission is granted and item exists before processing
+if (queryPermission('access_local_storage', 'read', LOCALSTORAGE_ITEM_NAME)) {
+  const localStorageConsent = localStorage.getItem(LOCALSTORAGE_ITEM_NAME);
+  if (localStorageConsent && typeof localStorageConsent !== 'undefined') {
+    const consentObject = JSON.parse(localStorageConsent);
+    processConsentObject(consentObject);
+  } else {
+    logToConsole('Local storage does not contain cookiefirst-consent');
+  }
+} else {
+  logToConsole('No permission to read from local storage.');
+}
+/**
+ * Add event listener to trigger update when consent changes
+ */
+callInWindow('addCFGTMConsentListener', (consentObject) => {
+  // Check local storage again within the event listener
+  if (queryPermission('access_local_storage', 'read', LOCALSTORAGE_ITEM_NAME)) {
+    const localStorageConsent = localStorage.getItem(LOCALSTORAGE_ITEM_NAME);
+    if (localStorageConsent && typeof localStorageConsent !== 'undefined') {
+      processConsentObject(consentObject);
     } else {
-        logToConsole('No permission to read from local storage.');
+      logToConsole('Local storage does not contain cookiefirst-consent');
     }
+  } else {
+    logToConsole('No permission to read from local storage.');
+  }
+});
 
   // If the URL input by the user matches the permissions set for the template,
 // inject the script with the onSuccess and onFailure methods as callbacks.
@@ -319,12 +336,8 @@ if (queryPermission('inject_script', url)) {
   injectScript(url, onSuccess, onFailure);
 } else {
   logToConsole('Template: Script load failed due to permissions mismatch.');
-}
-}
-  /**
-   * Add event listener to trigger update when consent changes
-   */
-  callInWindow('addCFGTMConsentListener', processConsentObject);
+  }
+      }
 };
 
 main(data);
